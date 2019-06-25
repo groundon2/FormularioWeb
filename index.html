@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>Sistema de Cadastro</title>
+		<meta name="description" content="">
+		<meta name="author" content="devin">
+		<link rel="stylesheet" type="text/css" href="index_css.css" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<script type="text/javascript">
+			function Validacao(form) {
+				var nome = document.forms['formulario']['nome'].value;
+				var sexo = document.forms['formulario']['sexo'].value;
+				var email = document.forms['formulario']['email'].value;
+				var cidade = document.forms['formulario']['cidade'].value;
+				if (nome == "") {
+					alert("O campo nome não está preenchido!!!");
+					return false;
+				} else if (sexo == "") {
+					alert("O campo sexo não está marcado!!!");
+					return false;
+				} else if (email == "") {
+					alert("O campo email não está preenchido!!!");
+					return false;
+				} else if (cidade == "") {
+					alert("O campo cidade não está preenchido!!!");
+					return false;
+				}
+			}
+
+			function label1(formu) {
+				var nome = document.forms['formulario']['nome'].value;
+				if (nome != "") {
+					document.getElementById('label1').style.marginTop = "-120px";
+					document.getElementById('label1').style.fontSize = "12px";
+					document.getElementById('label1').style.lineHeight = "2";
+					return true;
+				}
+			}
+
+			function label2(formu) {
+				var nome = document.forms['formulario']['email'].value;
+				if (nome != "") {
+					document.getElementById('label2').style.marginTop = "-120px";
+					document.getElementById('label2').style.fontSize = "12px";
+					document.getElementById('label2').style.lineHeight = "2";
+					return true;
+				}
+			}
+
+			function label3(formu) {
+				var nome = document.forms['formulario']['cidade'].value;
+				if (nome != "") {
+					document.getElementById('label3').style.marginTop = "-120px";
+					document.getElementById('label3').style.fontSize = "12px";
+					document.getElementById('label3').style.lineHeight = "2";
+					return true;
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		
+		<div id="agro">
+				<p>Agro é</p>
+				<ul>
+					<li> POP</li>
+					<li> TECH</li>
+					<li> TUDO</li>
+				</ul> 
+		</div>
+
+		<div>
+			<form name="formulario" method="post" action="pag1.php" onsubmit="return Validacao(this)" autocomplete="off">
+				<fieldset>
+					<h1 class="form_titulo"> Cadastro de Usuários </h1>
+					<div class="form_div">
+						<input type="text"  name="nome" class="form_input" onkeypress="return label1(this)"/>
+						<label for="" id="label1" class="form_label">Nome</label>
+						<br />
+					</div>
+					<div id="form_sexo">
+						<br/>
+						<input type="radio" name="sexo" value="M" />Masculino
+						<input type="radio" name="sexo" value="F" />Feminino<br/>
+					</div>
+					<div class="form_div">
+						<input type="email" name="email" class="form_input" onkeypress="return label2(this)"/>
+						<label for="" id="label2" class="form_label" >Email</label>
+						<br />
+					</div>
+					<div class="form_div">
+						<input type="text" name="cidade" class="form_input" onkeypress="return label3(this)"/>
+						<label for="" id="label3" class="form_label">Cidade</label>
+						<br />
+					</div>
+					<div>
+						<input type="submit" class="form_button" value="Cadastrar" />
+					</div>
+				</fieldset>
+			</form>
+		
+			<footer>
+				<p>
+					&copy; Copyright by André Vinícius
+				</p>
+			</footer>
+		</div>
+	</body>
+</html>

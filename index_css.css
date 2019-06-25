@@ -1,0 +1,122 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	margin: 0px;
+	font-family:sans-serif;
+}
+form{
+	/* Apenas para centralizar o form na página */
+    width: 400px;
+    max-width:100%;
+    margin:auto;
+    margin-top: 10px;
+    padding: 10px;
+    box-shadow: 5px 5px 20px 1px rgba(0,0,0,0,0.7);
+    border: 5px groove #CCC;
+   	position:relative;
+}
+.form_div{
+	position:relative;
+}
+.form_titulo{
+	text-align: center;
+	margin-top:0;
+	margin-bottom:30px;
+}
+.form_input,.form_label,.form_button{
+	display:block;
+	width: 100%;
+	font-size: 1.3em;
+}
+.form_input{
+	padding:20px;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius:2px;
+	background: rgba(0,0,0,0.1);
+	margin-bottom: 30px;
+	box-sizing: border-box;
+}
+.form_label{
+	position:absolute;
+	padding-left:10px;
+	margin-top: -75px;
+	z-index:-20;
+	color: rgba(0,0,0,0.5);
+  	line-height: (@space * 1.5);
+  	padding:0 (@space / 2);
+  	.transition(line-height linear .2s);
+  	cursor:text;
+}
+.form_button{
+	width:100%;
+	background: rgba(0,0,0,0.7);
+	color: white;
+	padding: 10px 20px;
+	cursor: pointer;
+	border: none;
+}
+#form_sexo{
+	display:block;
+	width: 100%;
+	font-size: 1.3em;
+	padding:20px;
+	background:	transparent;
+	margin-top: -50px;
+	margin-bottom: 0px;
+}
+.form_input:focus{
+	border: 1px solid;
+}
+
+.form_input:focus + .form_label{
+	transition: all 0.2s;
+}
+#agro{
+	position: relative;
+	font-size: 4em;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	width: 450px;
+	height: 100px;
+	line-height: 100px;
+	display: flex;
+	overflow: hidden;
+	color: green;
+}
+ul{
+	list-style: none;
+	animation: rolagem 4s infinite;	
+	padding-left: 20px;
+}
+ul,p{
+	margin:0px;
+}
+@keyframes rolagem{
+	0%{margin-top: 0;}
+	20%{margin-top: 0;}
+	
+	25%{margin-top: -100px;}
+	50%{margin-top: -100px;}
+	
+	55%{margin-top: -200px;}
+	80%{margin-top: -200px;}
+	
+	100%{margin-top: 0;}
+}
+
+@keyframes rolagem1{
+	0%{margin-top: 0;}
+	20%{margin-top: 0;}
+	
+	25%{margin-top: -100px;}
+	50%{margin-top: -100px;}
+	
+	55%{margin-top: -200px;}
+	80%{margin-top: -200px;}
+	
+	85%{margin-top: -100px;}
+	95%{margin-top: -100px;}
+	
+	100%{margin-top: 0;}
+}
