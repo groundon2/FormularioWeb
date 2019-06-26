@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>Sistema de Cadastro</title>
+		<meta name="description" content="">
+		<meta name="author" content="devin">
+		<link rel="stylesheet" type="text/css" href="index_css.css" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<script type="text/javascript">
+		function Muda_Cor(botao){
+			botao.innerHTML = "Ola"
+		}
+		function Maiuscula() {
+			var x = document.getElementById("nome");
+			x.value = x.value.toUpperCase();
+		}
+		</script>
+	</head>
+
+	<body>
+		<!--
+		<div id="agro">
+				<p>Agro é</p>
+				<ul>
+					<li> POP</li>
+					<li> TECH</li>
+					<li> TUDO</li>
+				</ul> 
+		</div>
+		-->
+		<div>
+			<form name="formulario" method="post" action="pag1.php" autocomplete="off">
+				<fieldset>
+					<h1 class="form_titulo"> Cadastro de Usuários </h1>
+					<div class="form_div">
+						<input type="text" id="nome" name="nome" class="form_input" placeholder="Digite seu nome..." onchange="Maiuscula(this)" required>
+						<br />
+					</div>
+					<div id="form_sexo">
+						<input type="radio" name="sexo" value="M" />Masculino
+						<input type="radio" name="sexo" value="F" />Feminino<br/>
+					</div>
+					<div class="form_div">
+						<input type="email" name="email" class="form_input" placeholder="Digite seu email..." required/>
+					</div>
+					<div class="form_div">
+						<input type="text" name="cidade" class="form_input" placeholder="Digite sua cidade..." required/>
+					</div>
+					<div onfocus="Muda_Cor(this)">
+						<input type="submit" class="form_button" value="Cadastrar"/>
+					</div>
+				</fieldset>
+			</form>
+		
+			<footer>
+				<p>
+					&copy; Copyright by André Vinícius & Felipe Boa-Sorte
+				</p>
+			</footer>
+		</div>
+	</body>
+</html>
