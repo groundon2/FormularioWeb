@@ -1,51 +1,39 @@
-function Validacao(form) {
-    var nome = document.forms['formulario']['nome'].value;
-    var sexo = document.forms['formulario']['sexo'].value;
-    var email = document.forms['formulario']['email'].value;
-    var cidade = document.forms['formulario']['cidade'].value;
-    if (nome == "") {
-        alert("O campo nome não está preenchido!!!");
-        return false;
-    } else if (sexo == "") {
-        alert("O campo sexo não está marcado!!!");
-        return false;
-    } else if (email == "") {
-        alert("O campo email não está preenchido!!!");
-        return false;
-    } else if (cidade == "") {
-        alert("O campo cidade não está preenchido!!!");
-        return false;
-    }
+function Validacao(){
+	tecla = event.keyCode;
+	if (tecla >= 48 && tecla <= 57)
+        return false
+    return true
 }
 
-function label1(formu) {
-    var nome1 = document.getElementById("input1").value;
-    var nome = document.forms['formulario']['nome'].value;
-    console.log(nome);
-    if (nome != "") {
-        document.getElementById('label1').style.marginTop = "-120px";
-        document.getElementById('label1').style.fontSize = "12px";
-        document.getElementById('label1').style.lineHeight = "2";
-        return true;
-    }
+function Maiuscula(campo){
+    var x = document.getElementById(campo);
+    x.value = x.value.toUpperCase();
 }
 
-function label2(formu) {
-    var nome = document.forms['formulario']['email'].value;
-    if (nome != "") {
-        document.getElementById('label2').style.marginTop = "-120px";
-        document.getElementById('label2').style.fontSize = "12px";
-        document.getElementById('label2').style.lineHeight = "2";
-        return true;
-    }
+function Muda_Cor(){
+    document.getElementById('teste').style.backgroundColor = 'red'
 }
 
-function label3(formu) {
-    var nome = document.forms['formulario']['cidade'].value;
-    if (nome != "") {
-        document.getElementById('label3').style.marginTop = "-120px";
-        document.getElementById('label3').style.fontSize = "12px";
-        document.getElementById('label3').style.lineHeight = "2";
+function Validar_cpf(){
+    tecla = event.keyCode;
+    cpf = document.getElementById("cpf").value;
+    if (tecla >= 48 && tecla <= 57){ 
+        console.log(cpf);
+        tamanho = cpf.length;
+        if(tamanho == 3 || tamanho == 7){
+            document.getElementById("cpf").value = cpf.concat('.');
+        }
+        else if(tamanho == 11)
+            document.getElementById("cpf").value = cpf.concat('-');
         return true;
     }
+    else if(tecla == 8){
+        console.log("Apagou");
+    }
+    else
+        return false;
+}
+
+function Cor_Original(){
+    document.getElementById('teste').style.backgroundColor = 'gray'
 }
