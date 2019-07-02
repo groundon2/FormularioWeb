@@ -15,25 +15,30 @@ function Muda_Cor(){
 }
 
 function Validar_cpf(){
-    tecla = event.keyCode;
-    cpf = document.getElementById("cpf").value;
-    if (tecla >= 48 && tecla <= 57){ 
-        console.log(cpf);
-        tamanho = cpf.length;
-        if(tamanho == 3 || tamanho == 7){
-            document.getElementById("cpf").value = cpf.concat('.');
-        }
-        else if(tamanho == 11)
-            document.getElementById("cpf").value = cpf.concat('-');
-        return true;
-    }
-    else if(tecla == 8){
-        console.log("Apagou");
-    }
-    else
-        return false;
+    const elementoAlvo = cpf
+    const cpfAtual = cpf.value   
+
+    let cpfAtualizado;
+
+    cpfAtualizado = cpfAtual.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, 
+    function( regex, argumento1, argumento2, argumento3, argumento4 ) {
+        return argumento1 + '.' + argumento2 + '.' + argumento3 + '-' + argumento4;
+    })  
+    elementoAlvo.value = cpfAtualizado;
 }
 
 function Cor_Original(){
     document.getElementById('teste').style.backgroundColor = 'gray'
+}
+
+function Cadastrar(){
+    inputM = document.getElementById('M').checked
+    inputF = document.getElementById('F').checked
+    if(inputF == false && inputM == false){
+        alert("Selecione seu sexo.")
+        return false
+    }else{
+        alert("Cadastro realizado com sucesso!!!")
+        return true
+    }
 }
